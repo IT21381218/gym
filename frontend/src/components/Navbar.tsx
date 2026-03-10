@@ -29,11 +29,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-4 md:px-8 lg:px-16 ${
         scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-3 sm:py-4 px-4 sm:px-0">
+      <div className="container mx-auto flex items-center justify-between py-3 sm:py-4 px-0">
         <Link to="/" className="flex items-center gap-1 sm:gap-2">
           <Dumbbell className="h-7 sm:h-8 w-7 sm:w-8 text-primary" />
           <span className="font-heading text-lg sm:text-2xl font-bold tracking-widest text-foreground">
@@ -77,7 +77,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border overflow-hidden"
           >
-            <div className="container mx-auto flex flex-col gap-2 py-3 sm:py-4 px-4 sm:px-0">
+            <div className="container mx-auto flex flex-col gap-2 py-3 sm:py-4 px-0">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
