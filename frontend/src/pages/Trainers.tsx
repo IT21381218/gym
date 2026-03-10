@@ -16,24 +16,24 @@ const Trainers = () => (
     <section className="section-padding">
       <div className="container mx-auto">
         <SectionHeading accent="Our Experts" title="Meet the Trainers" subtitle="World-class coaches ready to guide your transformation." />
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {trainers.map((t, i) => (
             <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="gradient-card rounded-lg border border-border overflow-hidden hover-lift">
               <div className="aspect-[3/4] overflow-hidden">
                 <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
               </div>
-              <div className="p-6 space-y-3">
+              <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-foreground">{t.name}</h3>
-                  <p className="text-primary text-sm font-semibold">{t.role}</p>
+                  <h3 className="font-heading text-base sm:text-xl font-bold text-foreground">{t.name}</h3>
+                  <p className="text-primary text-xs sm:text-sm font-semibold">{t.role}</p>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.bio}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{t.bio}</p>
                 <div className="text-xs text-muted-foreground space-y-1">
                   <p><span className="text-foreground/70">Specialty:</span> {t.specialty}</p>
                   <p><span className="text-foreground/70">Experience:</span> {t.exp}</p>
                   <p><span className="text-foreground/70">Certifications:</span> {t.certs}</p>
                 </div>
-                <div className="flex gap-3 pt-2">
+                <div className="flex gap-2 pt-2">
                   <a href="#" className="flex h-8 w-8 items-center justify-center rounded bg-secondary text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"><Instagram size={14} /></a>
                   <a href="#" className="flex h-8 w-8 items-center justify-center rounded bg-secondary text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"><Twitter size={14} /></a>
                 </div>

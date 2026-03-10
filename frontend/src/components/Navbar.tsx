@@ -33,21 +33,21 @@ const Navbar = () => {
         scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-2">
-          <Dumbbell className="h-8 w-8 text-primary" />
-          <span className="font-heading text-2xl font-bold tracking-widest text-foreground">
+      <div className="container mx-auto flex items-center justify-between py-3 sm:py-4 px-4 sm:px-0">
+        <Link to="/" className="flex items-center gap-1 sm:gap-2">
+          <Dumbbell className="h-7 sm:h-8 w-7 sm:w-8 text-primary" />
+          <span className="font-heading text-lg sm:text-2xl font-bold tracking-widest text-foreground">
             IRON <span className="text-primary">FORGE</span>
           </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`font-body text-sm font-medium uppercase tracking-wider transition-colors hover:text-primary ${
+              className={`font-body text-xs lg:text-sm font-medium uppercase tracking-wider transition-colors hover:text-primary ${
                 location.pathname === link.to ? "text-primary" : "text-foreground/80"
               }`}
             >
@@ -56,7 +56,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/free-trial"
-            className="ml-2 rounded bg-primary px-5 py-2.5 font-heading text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:shadow-[var(--neon-glow-strong)]"
+            className="ml-2 rounded bg-primary px-4 lg:px-5 py-2 lg:py-2.5 font-heading text-xs lg:text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:shadow-[var(--neon-glow-strong)]"
           >
             Free Trial
           </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button className="lg:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -77,12 +77,12 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border overflow-hidden"
           >
-            <div className="container mx-auto flex flex-col gap-3 py-4">
+            <div className="container mx-auto flex flex-col gap-2 py-3 sm:py-4 px-4 sm:px-0">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-body text-sm font-medium uppercase tracking-wider py-2 transition-colors hover:text-primary ${
+                  className={`font-body text-xs sm:text-sm font-medium uppercase tracking-wider py-2 transition-colors hover:text-primary ${
                     location.pathname === link.to ? "text-primary" : "text-foreground/80"
                   }`}
                 >
@@ -91,7 +91,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/free-trial"
-                className="mt-2 rounded bg-primary px-5 py-3 text-center font-heading text-sm font-semibold uppercase tracking-wider text-primary-foreground"
+                className="mt-2 rounded bg-primary px-4 sm:px-5 py-2.5 sm:py-3 text-center font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary-foreground"
               >
                 Free Trial
               </Link>

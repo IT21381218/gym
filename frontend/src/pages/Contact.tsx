@@ -18,44 +18,44 @@ const Contact = () => {
       <section className="section-padding">
         <div className="container mx-auto">
           <SectionHeading accent="Get in Touch" title="Contact Us" subtitle="Have a question? We'd love to hear from you." />
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-5">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
+            <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-4 sm:space-y-5">
               <div>
-                <label className="block text-sm text-foreground/80 mb-1.5 font-medium">Name</label>
-                <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="w-full rounded bg-secondary border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="Your name" />
+                <label className="block text-xs sm:text-sm text-foreground/80 mb-1 sm:mb-1.5 font-medium">Name</label>
+                <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="w-full rounded bg-secondary border border-border px-3 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="Your name" />
               </div>
               <div>
-                <label className="block text-sm text-foreground/80 mb-1.5 font-medium">Email</label>
-                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className="w-full rounded bg-secondary border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="your@email.com" />
+                <label className="block text-xs sm:text-sm text-foreground/80 mb-1 sm:mb-1.5 font-medium">Email</label>
+                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className="w-full rounded bg-secondary border border-border px-3 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="your@email.com" />
               </div>
               <div>
-                <label className="block text-sm text-foreground/80 mb-1.5 font-medium">Phone</label>
-                <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full rounded bg-secondary border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="+971..." />
+                <label className="block text-xs sm:text-sm text-foreground/80 mb-1 sm:mb-1.5 font-medium">Phone</label>
+                <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full rounded bg-secondary border border-border px-3 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary" placeholder="+971..." />
               </div>
               <div>
-                <label className="block text-sm text-foreground/80 mb-1.5 font-medium">Message</label>
-                <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} className="w-full rounded bg-secondary border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" placeholder="Your message..." />
+                <label className="block text-xs sm:text-sm text-foreground/80 mb-1 sm:mb-1.5 font-medium">Message</label>
+                <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} required rows={5} className="w-full rounded bg-secondary border border-border px-3 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary resize-none" placeholder="Your message..." />
               </div>
-              <button type="submit" className="inline-flex items-center gap-2 rounded bg-primary px-8 py-3.5 font-heading text-sm font-bold uppercase tracking-wider text-primary-foreground hover:shadow-[var(--neon-glow-strong)] transition-all">
-                Send Message <Send size={16} />
+              <button type="submit" className="inline-flex items-center gap-2 rounded bg-primary px-6 sm:px-8 py-2.5 sm:py-3.5 font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-foreground hover:shadow-[var(--neon-glow-strong)] transition-all">
+                Send Message <Send size={14} className="sm:w-4 sm:h-4" />
               </button>
             </motion.form>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-8">
-              <div className="gradient-card rounded-lg border border-border p-6 space-y-5">
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6 sm:space-y-8">
+              <div className="gradient-card rounded-lg border border-border p-4 sm:p-6 space-y-4 sm:space-y-5">
                 {[
                   { icon: MapPin, label: "Address", value: "Downtown Dubai, Sheikh Zayed Road, UAE" },
                   { icon: Phone, label: "Phone", value: "+971 4 123 4567" },
                   { icon: Mail, label: "Email", value: "info@ironforge.ae" },
                   { icon: Clock, label: "Hours", value: "Mon-Fri: 5AM-11PM | Sat-Sun: 6AM-10PM" },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-primary/10 text-primary">
-                      <item.icon size={18} />
+                  <div key={item.label} className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex h-8 sm:h-10 w-8 sm:w-10 shrink-0 items-center justify-center rounded bg-primary/10 text-primary">
+                      <item.icon size={16} className="sm:w-4.5 sm:h-4.5" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-foreground">{item.label}</p>
-                      <p className="text-sm text-muted-foreground">{item.value}</p>
+                      <p className="text-xs sm:text-sm font-medium text-foreground">{item.label}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{item.value}</p>
                     </div>
                   </div>
                 ))}

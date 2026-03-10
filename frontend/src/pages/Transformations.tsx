@@ -13,33 +13,33 @@ const Transformations = () => (
     <section className="section-padding">
       <div className="container mx-auto">
         <SectionHeading accent="Real Results" title="Client Transformations" subtitle="Real people. Real results. See what's possible at Iron Forge." />
-        <div className="space-y-12 max-w-4xl mx-auto">
+        <div className="space-y-8 sm:space-y-12 max-w-4xl mx-auto">
           {transformations.map((t, i) => (
-            <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg border border-border p-8">
-              <div className="grid md:grid-cols-[1fr_2fr] gap-8">
-                <div className="space-y-4">
-                  <h3 className="font-heading text-2xl font-bold text-foreground">{t.name}</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded bg-secondary p-3 text-center">
+            <motion.div key={t.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg border border-border p-4 sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-8">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground">{t.name}</h3>
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="rounded bg-secondary p-2 sm:p-3 text-center">
                       <p className="text-xs text-muted-foreground uppercase">Before</p>
-                      <p className="font-heading text-lg font-bold text-foreground">{t.before}</p>
+                      <p className="font-heading text-base sm:text-lg font-bold text-foreground">{t.before}</p>
                     </div>
-                    <div className="rounded bg-primary/10 border border-primary/20 p-3 text-center">
+                    <div className="rounded bg-primary/10 border border-primary/20 p-2 sm:p-3 text-center">
                       <p className="text-xs text-primary uppercase">After</p>
-                      <p className="font-heading text-lg font-bold text-primary">{t.after}</p>
+                      <p className="font-heading text-base sm:text-lg font-bold text-primary">{t.after}</p>
                     </div>
                   </div>
-                  <div className="text-center rounded bg-secondary p-3">
-                    <p className="font-heading text-sm font-bold text-primary">{t.lost || t.gained}</p>
+                  <div className="text-center rounded bg-secondary p-2 sm:p-3">
+                    <p className="font-heading text-xs sm:text-sm font-bold text-primary">{t.lost || t.gained}</p>
                     <p className="text-xs text-muted-foreground">in {t.duration}</p>
                   </div>
                 </div>
                 <div>
-                  <div className="mb-4">
-                    <Quote size={24} className="text-primary/40 mb-2" />
-                    <p className="text-foreground/80 italic leading-relaxed">"{t.quote}"</p>
+                  <div className="mb-3 sm:mb-4">
+                    <Quote size={20} className="sm:w-6 sm:h-6 text-primary/40 mb-2" />
+                    <p className="text-sm sm:text-base text-foreground/80 italic leading-relaxed">"{t.quote}"</p>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{t.story}</p>
+                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{t.story}</p>
                 </div>
               </div>
             </motion.div>

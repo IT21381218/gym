@@ -17,22 +17,22 @@ const Blog = () => (
     <section className="section-padding">
       <div className="container mx-auto">
         <SectionHeading accent="Blog" title="Fitness Insights" subtitle="Expert tips, workout guides, and nutrition advice from our trainers." />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {posts.map((p, i) => (
             <motion.article key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg border border-border overflow-hidden hover-lift group cursor-pointer">
-              <div className="h-48 bg-secondary flex items-center justify-center">
-                <span className="font-heading text-3xl text-muted-foreground/30">IF</span>
+              <div className="h-40 sm:h-48 bg-secondary flex items-center justify-center">
+                <span className="font-heading text-2xl sm:text-3xl text-muted-foreground/30">IF</span>
               </div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="rounded bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary uppercase tracking-wider">{p.category}</span>
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <span className="rounded bg-primary/10 px-2 sm:px-2.5 py-0.5 sm:py-1 text-xs font-semibold text-primary uppercase tracking-wider">{p.category}</span>
                   <span className="flex items-center gap-1 text-xs text-muted-foreground"><Clock size={12} /> {p.readTime}</span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{p.excerpt}</p>
+                <h3 className="font-heading text-base sm:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">{p.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">{p.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground">{p.date}</span>
-                  <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Read <ArrowRight size={14} /></span>
+                  <span className="text-primary text-xs sm:text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Read <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" /></span>
                 </div>
               </div>
             </motion.article>

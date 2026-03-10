@@ -16,7 +16,7 @@ const trainers = [
 const About = () => (
   <div className="pt-20">
     {/* Hero */}
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroImg} alt="About Iron Forge" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/85" />
@@ -45,18 +45,18 @@ const About = () => (
 
     {/* Mission & Vision */}
     <section className="section-padding bg-card">
-      <div className="container mx-auto grid md:grid-cols-3 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {[
           { icon: Target, title: "Our Mission", text: "To make world-class fitness accessible and empower every individual to achieve their strongest self." },
           { icon: Heart, title: "Our Vision", text: "To be the most trusted and transformative fitness brand in the Middle East and beyond." },
           { icon: Award, title: "Our Values", text: "Discipline, integrity, community, and relentless pursuit of excellence in everything we do." },
         ].map((item, i) => (
-          <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg p-8 border border-border text-center">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mb-5">
-              <item.icon size={32} />
+          <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg p-6 sm:p-8 border border-border text-center">
+            <div className="mx-auto flex h-14 sm:h-16 w-14 sm:w-16 items-center justify-center rounded-full bg-primary/10 text-primary mb-4 sm:mb-5">
+              <item.icon size={28} className="sm:w-8 sm:h-8" />
             </div>
-            <h3 className="font-heading text-xl font-bold text-foreground mb-3">{item.title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+            <h3 className="font-heading text-base sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{item.title}</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item.text}</p>
           </motion.div>
         ))}
       </div>
@@ -66,15 +66,15 @@ const About = () => (
     <section className="section-padding">
       <div className="container mx-auto">
         <SectionHeading accent="The Team" title="Meet Our Trainers" subtitle="Certified professionals with a passion for your success." />
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {trainers.map((t, i) => (
             <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="gradient-card rounded-lg border border-border overflow-hidden hover-lift">
               <div className="aspect-[3/4] overflow-hidden">
                 <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
               </div>
-              <div className="p-6">
-                <h3 className="font-heading text-xl font-bold text-foreground">{t.name}</h3>
-                <p className="text-primary text-sm font-semibold mb-2">{t.role}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="font-heading text-base sm:text-xl font-bold text-foreground">{t.name}</h3>
+                <p className="text-primary text-xs sm:text-sm font-semibold mb-2">{t.role}</p>
                 <p className="text-muted-foreground text-xs mb-1">Specialty: {t.specialty}</p>
                 <p className="text-muted-foreground text-xs mb-1">Experience: {t.exp}</p>
                 <p className="text-muted-foreground text-xs">Certifications: {t.certs}</p>

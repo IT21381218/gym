@@ -16,39 +16,39 @@ const programs = [
 
 const Programs = () => (
   <div className="pt-20">
-    <section className="relative py-24 overflow-hidden">
+    <section className="h-auto py-12 sm:py-16 md:py-20 relative flex items-center justify-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px]">
       <div className="absolute inset-0">
         <img src={heroImg} alt="Programs" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/85" />
       </div>
-      <div className="relative z-10 container mx-auto text-center px-4">
-        <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-4">Our <span className="text-primary">Programs</span></h1>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto">Comprehensive fitness programs for every goal and fitness level.</p>
+      <div className="relative z-10 container mx-auto text-center px-4 sm:px-6">
+        <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-2 sm:mb-4">Our <span className="text-primary">Programs</span></h1>
+        <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">Comprehensive fitness programs for every goal and fitness level.</p>
       </div>
     </section>
 
     <section className="section-padding">
-      <div className="container mx-auto space-y-12">
+      <div className="container mx-auto space-y-8 sm:space-y-12">
         {programs.map((p, i) => (
           <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className={`grid md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
           >
             <div className={i % 2 === 1 ? "md:order-2" : ""}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary mb-4">
-                <p.icon size={24} />
+              <div className="flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-lg bg-primary/10 text-primary mb-3 sm:mb-4">
+                <p.icon size={20} className="sm:w-6 sm:h-6" />
               </div>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">{p.title}</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
-              <ul className="grid grid-cols-2 gap-2 mb-6">
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">{p.title}</h2>
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">{p.desc}</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 sm:mb-6">
                 {p.benefits.map((b) => (
-                  <li key={b} className="flex items-center gap-2 text-sm text-foreground/80">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <li key={b} className="flex items-center gap-2 text-xs sm:text-sm text-foreground/80">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                     {b}
                   </li>
                 ))}
               </ul>
-              <Link to="/free-trial" className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 font-heading text-sm font-bold uppercase tracking-wider text-primary-foreground hover:shadow-[var(--neon-glow-strong)] transition-all">
-                Sign Up <ArrowRight size={16} />
+              <Link to="/free-trial" className="inline-flex items-center gap-2 rounded bg-primary px-5 sm:px-6 py-2.5 sm:py-3 font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-foreground hover:shadow-[var(--neon-glow-strong)] transition-all">
+                Sign Up <ArrowRight size={14} className="sm:w-4 sm:h-4" />
               </Link>
             </div>
             <div className={`rounded-lg overflow-hidden aspect-video ${i % 2 === 1 ? "md:order-1" : ""}`}>
