@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative min-h-[70vh] sm:min-h-screen flex items-center overflow-hidden pt-16 sm:pt-0">
+      <section className="relative min-h-[100vh] sm:min-h-screen flex items-center overflow-hidden pt-20 xs:pt-16 sm:pt-0">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Iron Forge Gym Interior" className="h-full w-full object-cover" />
           <div className="gradient-overlay" />
@@ -48,29 +48,29 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block rounded bg-primary/20 px-3 sm:px-4 py-1 sm:py-1.5 font-heading text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6 border border-primary/30">
+            <span className="inline-block rounded bg-primary/20 px-2 xs:px-3 sm:px-4 py-1 sm:py-1.5 font-heading text-[10px] xs:text-xs sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.3em] text-primary mb-3 xs:mb-4 sm:mb-6 border border-primary/30">
               Dubai's Premier Fitness Destination
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold leading-[1] sm:leading-[0.95] text-foreground mb-4 sm:mb-6">
+            <h1 className="font-heading text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold leading-tight xs:leading-[1] sm:leading-[0.95] text-foreground mb-3 xs:mb-4 sm:mb-6">
               Forge Your
               <br />
               <span className="text-primary neon-text">Strongest</span> Self
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/70 max-w-xl mb-6 sm:mb-8 font-body leading-relaxed">
+            <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-foreground/70 max-w-xl mb-5 xs:mb-6 sm:mb-8 font-body leading-relaxed">
               World-class equipment, elite trainers, and a relentless community. Your transformation starts here.
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Link
                 to="/membership"
-                className="inline-flex items-center justify-center sm:justify-start gap-2 rounded bg-primary px-6 sm:px-8 py-3 sm:py-4 font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:shadow-[var(--neon-glow-strong)] hover:scale-105 w-full sm:w-auto"
+                className="inline-flex items-center justify-center sm:justify-start gap-2 rounded bg-primary px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 font-heading text-[11px] xs:text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:shadow-[var(--neon-glow-strong)] hover:scale-105 sm:w-auto"
               >
-                Join Now <ArrowRight size={16} className="hidden sm:inline" />
+                Join Now <ArrowRight size={14} className="hidden sm:inline" />
               </Link>
               <Link
                 to="/free-trial"
-                className="inline-flex items-center justify-center sm:justify-start gap-2 rounded border-2 border-foreground/30 px-6 sm:px-8 py-3 sm:py-4 font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:border-primary hover:text-primary w-full sm:w-auto"
+                className="inline-flex items-center justify-center sm:justify-start gap-2 rounded border-2 border-foreground/30 px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 font-heading text-[11px] xs:text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground transition-all hover:border-primary hover:text-primary sm:w-auto"
               >
-                Free Trial <ChevronRight size={16} className="hidden sm:inline" />
+                Free Trial <ChevronRight size={14} className="hidden sm:inline" />
               </Link>
             </div>
           </motion.div>

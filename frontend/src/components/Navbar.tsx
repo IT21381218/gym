@@ -77,13 +77,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border overflow-hidden"
           >
-            <div className="container mx-auto flex flex-col gap-2 py-3 sm:py-4 px-0">
+            <div className="container mx-auto flex flex-col py-4 sm:py-6 px-0">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-body text-xs sm:text-sm font-medium uppercase tracking-wider py-2 transition-colors hover:text-primary ${
-                    location.pathname === link.to ? "text-primary" : "text-foreground/80"
+                  className={`font-body text-xs sm:text-sm font-medium uppercase tracking-wider px-4 py-3.5 border-b border-border/40 transition-colors hover:text-primary hover:bg-background/50 ${
+                    location.pathname === link.to ? "text-primary bg-primary/5" : "text-foreground/80"
                   }`}
                 >
                   {link.label}
@@ -91,7 +91,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/free-trial"
-                className="mt-2 rounded bg-primary px-4 sm:px-5 py-2.5 sm:py-3 text-center font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary-foreground"
+                className="m-4 mt-6 rounded bg-primary px-4 sm:px-5 py-3 sm:py-3.5 text-center font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider text-primary-foreground hover:shadow-[var(--neon-glow-strong)] transition-all"
               >
                 Free Trial
               </Link>
